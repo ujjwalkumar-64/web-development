@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Counter</title>
+<style>
+#count {
+font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<p id="count">0</p>
+<button onclick="incrementCount()">Increment</button>
+<script>
+let count = 0;
+const countElement =
+document.getElementById('count');
+function incrementCount() {
+count++;
+countElement.innerText = count;
+updateFontSize();
+}
+function updateFontSize() {
+const fontSize = 16 + count * 2;
+countElement.style.fontSize = `${fontSize}px`;
+}
+</script>
+</body>
+</html>
