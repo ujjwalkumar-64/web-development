@@ -1,0 +1,25 @@
+<html>
+<body>
+<button onclick="makePage();">Click Here</button>
+</body>
+<script>
+function makePage(){
+let x = document.createElement("h1");
+x.textContent = "I am H1";
+let para = document.createElement("p");
+para.textContent = "This Paragraph is followed
+by a list";
+let list = document.createElement("ol");
+list.type = "I"
+for (let i = 1; i <= 3; i++) {
+let listItem =
+document.createElement("li");
+listItem.textContent = `Item ${i}`;
+list.appendChild(listItem);
+}
+document.body.appendChild(x);
+document.body.appendChild(para);
+document.body.appendChild(list);
+}
+</script>
+</html>
