@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Add Row with Sum</title>
+</head>
+<body>
+<table id="dataTable" border="1">
+<tr>
+<th>Number</th>
+</tr>
+<tr>
+
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+</tr>
+</table>
+<button onclick="addRowWithSum()">Add Row with
+Sum</button>
+<script>
+function addRowWithSum() {
+const table =
+document.getElementById('dataTable');
+const rows = table.getElementsByTagName('tr');
+const lastRow = rows[rows.length - 1];
+const prevRow = lastRow.previousElementSibling;
+const sum =
+parseInt(lastRow.lastElementChild.innerText) +
+parseInt(prevRow.lastElementChild.innerText);
+const newRow = document.createElement('tr');
+const newData = document.createElement('td');
+newData.innerText = sum;
+newRow.appendChild(newData);
+table.appendChild(newRow);
+}
+</script>
+</body>
+</html>
