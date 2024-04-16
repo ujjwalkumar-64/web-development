@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Dynamic Text Replacement</title>
+</head>
+<body>
+<div id="container">
+<h2><span id="dynamicText">Hello</span></h2>
+<input type="text" id="textInput" placeholder="Type
+here">
+<button onclick="replaceText()">Replace
+Text</button>
+</div>
+<script>
+function replaceText() {
+const newText =
+document.getElementById('textInput').value;
+const dynamicText =
+document.getElementById('dynamicText');
+dynamicText.innerText = newText;
+dynamicText.parentElement.classList.add('spin');
+}
+
+</script>
+<style>
+.spin {
+animation: spin 2s linear infinite;
+transform-origin: center;
+}
+@keyframes spin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+</style>
+</body>
+</html>
