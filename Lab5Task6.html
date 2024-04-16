@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Calculator</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<br>
+<button onclick="calculate('+')">+</button>
+<button onclick="calculate('-')">-</button>
+<button onclick="calculate('*')">*</button>
+<button onclick="calculate('/')">/</button>
+<div id="result"></div>
+<script>
+function calculate(operator) {
+const input1 =
+Number.parseInt(document.getElementById('input1').valu
+e);
+const input2 =
+Number.parseInt(document.getElementById('input2').valu
+e);
+let result;
+switch(operator) {
+case '+':
+result = input1 + input2;
+break;
+case '-':
+result = input1 - input2;
+break;
+case '*':
+result = input1 * input2;
+break;
+case '/':
+if (input2 !== 0) {
+result = input1 / input2;
+} else {
+result = 'Cannot divide by zero';
+
+}
+break;
+default:
+result = 'Invalid operator';
+}
+document.getElementById('result').innerText =
+result;
+}
+</script>
+</body>
+</html>
